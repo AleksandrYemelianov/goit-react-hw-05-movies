@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Home = () => {
   
   const [trendingMovies, setTrendingMovies] = useState([]);
-  const [isLoad, setIsLoad] = useState(false)
+  const [isLoad, setIsLoad] = useState(false);
 
   useEffect(() => {
     setIsLoad(true)
@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <>
       {isLoad && <Loader />}
-      <MoviesList trendingMovies={trendingMovies} />
+      <MoviesList movies={trendingMovies} state/>
     </>
   )
 }

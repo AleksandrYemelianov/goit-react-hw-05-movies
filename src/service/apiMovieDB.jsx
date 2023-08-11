@@ -31,3 +31,19 @@ export const fetchSearchStringMovie = async (query) => {
     const { data } = await axios.get(`/search/movie`, { params });
     return data;
 }
+
+export const fetchCastMovie = async (id) => {
+    const params = new URLSearchParams({
+        api_key: API_KEY,
+    })
+    const { data } = await axios.get(`/movie/${id}/credits`, { params });
+    return data;
+}
+
+export const fetchReviewsMovie = async (id) => {
+    const params = new URLSearchParams({
+        api_key: API_KEY,
+    })
+    const { data } = await axios.get(`/movie/${id}/reviews`, { params });
+    return data;
+}

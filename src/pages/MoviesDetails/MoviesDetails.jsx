@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify';
 
 import {fetchMovieDetails} from '../../service/apiMovieDB'
@@ -7,6 +7,7 @@ import {fetchMovieDetails} from '../../service/apiMovieDB'
 import optionNotification from 'components/Notification/Notification';
 import Loader from 'components/Loader/Loader';
 import MovieInfo from 'components/MovieInfo/MovieInfo';
+import BackLink from 'components/BackLink/BackLink';
 
 const MoviesDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null)
@@ -30,11 +31,26 @@ const MoviesDetails = () => {
     getMovieDetails()
   }, [movieId]);
   
-console.log(movieDetails)
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? "/";
+
   return (
     <div>
       {isLoad && <Loader />}
+      {movieDetails !== null && <BackLink to={backLinkHref} />}
       {movieDetails !== null && <MovieInfo movieDetails={movieDetails} />}
+      <div>
+        <h3>Additional information</h3>
+        <ul>
+          <li>
+            <Link to="cast ">Cast</Link>
+          </li>
+          <li>
+            <Link to="reviews">Reviews</Link>
+          </li>
+        </ul>
+        <Outlet/>
+      </div>
     </div>
   )
 }
