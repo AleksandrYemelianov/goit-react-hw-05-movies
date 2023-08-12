@@ -1,8 +1,9 @@
 import Loader from 'components/Loader/Loader';
+import ReviewsInfo from 'components/ReviewsInfo/ReviewsInfo';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { fetchReviewsMovie } from 'service/apiMovieDB';
-import ReviewsInfo from './ReviewsInfo/ReviewsInfo';
+
 
 import css from './Reviews.module.css'
 
@@ -28,16 +29,16 @@ const Reviews = () => {
     };
     getReviewsMovie()
   }, [movieId]);
-
   return (
-    <div>
+    <>
       {isLoad && <Loader />}
       {<ul className={css.list}>
         {Array.isArray(movieReviews) && movieReviews.length > 0 && movieReviews.map(review => 
-            <ReviewsInfo key={review.id} review={review} />
+          <ReviewsInfo key={review.id} review={review} />
         )}
+        {movieReviews?.length === 0 && <p className={css.notReviews}>There are no reviews yet</p>}
       </ul>}
-    </div>
+    </>
   )
 }
 

@@ -1,0 +1,11 @@
+.list {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.notCast {
+  margin-top: 10px;
+}

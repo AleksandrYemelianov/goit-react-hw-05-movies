@@ -1,0 +1,21 @@
+.scrollUpWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-text-color);
+}
+
+.scrollUpWrap:hover {
+  outline: 2px solid var(--primary-color);
+  box-shadow: 0px 0px 9px 12px rgba(165, 41, 42, 0.96);
+}
+
+.scrollUpIcon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  color: var(--primary-color);
+}

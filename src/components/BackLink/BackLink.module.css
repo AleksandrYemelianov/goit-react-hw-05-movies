@@ -1,0 +1,11 @@
+.link {
+  display: block;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
+
+.linkIcon {
+  margin-right: 8px;
+}

@@ -1,0 +1,27 @@
+.item {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 24px -7px #f0d044;
+  text-align: start;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.reviewTitle {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: lemonchiffon;
+}
+
+.reviewTitleAccent {
+  composes: reviewTitle;
+  color: var(--primary-text-color);
+}
+
+.text {
+  composes: reviewTitle;
+}

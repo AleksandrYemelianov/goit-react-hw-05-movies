@@ -30,14 +30,15 @@ const Cast = () => {
   }, [movieId]);
   
   return (
-    <div>
+    <>
       {isLoad && <Loader/>}
       {<ul className={css.list}>
         {Array.isArray(movieCasts) && movieCasts.length > 0 && movieCasts.map(cast => 
             <CastInfo key={cast.id} cast={cast} />
         )}
+      {movieCasts?.length === 0 && <p className={css.notCast}>We have no information about the actors</p>}  
       </ul>}
-    </div>
+    </>
   )
 }
 

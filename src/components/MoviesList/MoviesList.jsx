@@ -9,13 +9,13 @@ const MoviesList = ({ movies }) => {
     const location = useLocation();
 
     return (
-        <div>
+        <>
             <ul className={css.list}>
                 {Array.isArray(movies) && movies.length > 0 && movies.map(movie => 
                     <MoviesItem key={movie.id} card={movie} location={location} />
                 )}
             </ul>
-        </div>
+        </>
     );
 }
 

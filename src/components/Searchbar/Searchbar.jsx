@@ -5,7 +5,7 @@ import css from './Searchbar.module.css';
 const Searchbar = ({ onSubmit, value }) => {
 
     return (
-        <header className={css.searchbar}>
+        <>
         <form  onSubmit={onSubmit} className={css.searchForm}>
             <button type="submit" className={css.searchFormBtn}>
             <span className={css.btnLabel}><MdScreenSearchDesktop className={css.iconSearch} /></span>
@@ -21,7 +21,7 @@ const Searchbar = ({ onSubmit, value }) => {
                 defaultValue={value}
             />
         </form>
-        </header>
+        </>
     );
 };
 

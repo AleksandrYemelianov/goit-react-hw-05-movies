@@ -1,0 +1,21 @@
+.item {
+  width: 150px;
+}
+
+.img {
+  height: 225px;
+  border-radius: 10px;
+}
+
+.titleCost {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: lemonchiffon;
+}
+
+.subDescCost {
+  composes: titleCost;
+  color: var(--primary-text-color);
+}
